@@ -8,7 +8,6 @@ from random import seed, getrandbits, choices, choice
 from passlib.apache import HtpasswdFile
 
 parser = argparse.ArgumentParser(description='Gen Squid Config')
-parser.add_argument('--ipv6_subnet_full', help='ipv6 subnet full', required=True)
 parser.add_argument('--net_interface', help='net interface', required=True)
 parser.add_argument('--pool_name', help='pool name', required=True)
 parser.add_argument('--username', help='username', default='cloud')
@@ -21,7 +20,10 @@ args = parser.parse_args()
 
 base_path = pathlib.Path(__file__).parent.absolute()
 
-ipv6_subnet_full = args.ipv6_subnet_full
+addrs = netifaces.ifaddresses(net_interface)
+ipv6Addr = addrs[netifaces.AF_INET6][0]['addr']
+groups = ipv6Addr.split(':')
+ipv6_subnet_full = ':'.join(groups[:4]) + "::/64"
 net_interface = args.net_interface
 number_ipv6 = args.number_ipv6
 unique_ip = args.unique_ip
