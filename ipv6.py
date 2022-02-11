@@ -4,7 +4,7 @@ import os
 import pathlib
 from ipaddress import IPv6Network, IPv6Address
 from random import seed, getrandbits, choices, choice
-
+import netifaces
 from passlib.apache import HtpasswdFile
 
 parser = argparse.ArgumentParser(description='Gen Squid Config')
