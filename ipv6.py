@@ -20,11 +20,13 @@ args = parser.parse_args()
 
 base_path = pathlib.Path(__file__).parent.absolute()
 
+net_interface = args.net_interface
+
 addrs = netifaces.ifaddresses(net_interface)
 ipv6Addr = addrs[netifaces.AF_INET6][0]['addr']
 groups = ipv6Addr.split(':')
 ipv6_subnet_full = ':'.join(groups[:4]) + "::/64"
-net_interface = args.net_interface
+
 number_ipv6 = args.number_ipv6
 unique_ip = args.unique_ip
 start_port = args.start_port
