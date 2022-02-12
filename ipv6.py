@@ -5,16 +5,17 @@ import pathlib
 import netifaces
 from ipaddress import IPv6Network, IPv6Address
 from random import seed, getrandbits, choices, choice
+
 from passlib.apache import HtpasswdFile
 
 parser = argparse.ArgumentParser(description='Gen Squid Config')
 parser.add_argument('--net_interface', help='net interface', required=True)
 parser.add_argument('--pool_name', help='pool name', required=True)
 parser.add_argument('--username', help='username', default='cloud')
-parser.add_argument('--password', help='password', default='v6ForYou69')
-parser.add_argument('--number_ipv6', help='number ipv6. Default = 250', default=250, type=int)
+parser.add_argument('--password', help='password', default='proxies')
+parser.add_argument('--number_ipv6', help='number ipv6. Default = 250', default=500, type=int)
 parser.add_argument('--unique_ip', help='single ip for each /64 subnet. Default = 1', default=1, type=int)
-parser.add_argument('--start_port', help='start proxy port. Default 32000', default=32000, type=int)
+parser.add_argument('--start_port', help='start proxy port. Default 10000', default=10000, type=int)
 
 args = parser.parse_args()
 
@@ -159,7 +160,7 @@ squid_conf_suffix = '''
     http_access allow localhost manager
     http_access deny manager
 
-    auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/{pid}.auth
+    auth_param basic program /usr/local/squid/libexec/basic_ncsa_auth /etc/squid/{pid}.auth
 
     auth_param basic children 5
     auth_param basic realm Web-Proxy
