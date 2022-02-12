@@ -4,7 +4,7 @@ echo "=========== Install SQUID ================="
 sudo apt install gdebi -y
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_3.deb
-sudo gdebi ./squid_3.deb -y
+sudo gdebi -n ./squid_3.deb
 
 echo "=========== MAKE DIRS ================="
 chmod 777 /usr/local/squid/var/logs/
