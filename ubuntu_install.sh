@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_3.deb
 sudo apt install ./squid_3.deb
