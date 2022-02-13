@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo "=========== PIP TOOLS ================="
+sudo apt-get update
+sudo apt-get install -y python3-pip
+  
 echo "=========== Install SQUID ================="
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_test.deb
