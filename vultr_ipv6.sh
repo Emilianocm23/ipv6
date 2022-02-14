@@ -5,6 +5,8 @@ cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_hetzner.deb
 sudo dpkg -i ./squid_hetzner.deb
 
+sudo apt-get install apache2-utils -y
+
 echo "=========== MAKE DIRS ================="
 mkdir /var/spool/squid3
 mkdir /etc/squid
