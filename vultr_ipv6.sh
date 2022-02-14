@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
-echo "=========== PIP TOOLS ================="
-sudo apt-get update
-sudo apt install build-essential vim git wget htop curl python3 python3-dev python3-venv python3-pip -y
-
-
 echo "=========== Install SQUID ================="
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_hetzner.deb
 sudo apt install ./squid_hetzner.deb
 sudo apt-get install -f
 
-
+echo "=========== PIP TOOLS ================="
+sudo apt-get update
+sudo apt install build-essential vim git wget htop curl python3 python3-dev python3-venv python3-pip -y
 
 echo "=========== MAKE DIRS ================="
 mkdir /var/spool/squid3
