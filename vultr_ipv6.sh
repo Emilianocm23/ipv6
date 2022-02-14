@@ -8,6 +8,8 @@ sudo dpkg -i ./squid_hetzner.deb
 echo "=========== MAKE DIRS ================="
 sudo mkdir -p /usr/local/squid/var/logs/
 sudo chmod 644 /usr/local/squid/var/logs/
+echo "" > /usr/local/squid/var/logs/cache.log
+sudo chmod 644 /usr/local/squid/var/logs/cache.log
 mkdir /var/spool/squid3
 mkdir /etc/squid
 
