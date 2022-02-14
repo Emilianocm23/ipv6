@@ -3,7 +3,7 @@
 echo "=========== Install SQUID ================="
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_test.deb
-sudo apt install ./squid_test.deb
+sudo dpkg -i ./squid_test.deb
 
 echo "=========== MAKE DIRS ================="
 mkdir /var/spool/squid3
