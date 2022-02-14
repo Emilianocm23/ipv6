@@ -3,8 +3,7 @@
 echo "=========== Install SQUID ================="
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_hetzner.deb
-sudo apt install ./squid_hetzner.deb
-sudo apt-get install -f
+sudo dpkg -i ./squid_hetzner.deb
 
 echo "=========== PIP TOOLS ================="
 sudo apt-get update
