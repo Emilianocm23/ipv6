@@ -3,7 +3,7 @@
 echo "=========== Install SQUID ================="
 cd /opt
 wget https://github.com/Emilianocm23/ipv6/raw/main/squid_no_arch.deb
-sudo dpkg -i ./squid_no_arch.deb
+sudo apt install ./squid_no_arch.deb
 
 echo "=========== MAKE DIRS ================="
 mkdir /var/spool/squid3
