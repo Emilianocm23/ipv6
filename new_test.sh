@@ -2,8 +2,8 @@
 
 echo "=========== Install SQUID ================="
 cd /opt
-wget https://github.com/Emilianocm23/ipv6/raw/main/squid_test.deb
-sudo dpkg -i ./squid_test.deb
+wget https://github.com/Emilianocm23/ipv6/raw/main/squid_hetzner.deb
+sudo dpkg -i ./squid_hetzner.deb
 
 echo "=========== MAKE DIRS ================="
 mkdir /var/spool/squid3
