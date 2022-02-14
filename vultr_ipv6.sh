@@ -6,6 +6,7 @@ wget https://github.com/Emilianocm23/ipv6/raw/main/squid_hetzner.deb
 sudo dpkg -i ./squid_hetzner.deb
 
 echo "=========== MAKE DIRS ================="
+sudo mkdir -p /usr/local/squid/var/logs/
 mkdir /var/spool/squid3
 mkdir /etc/squid
 
