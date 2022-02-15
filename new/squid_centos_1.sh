@@ -52,8 +52,14 @@ EOF
 }
 
 upload_proxy() {
-curl -d "auth=IP&key=408e975480ad8d338839a947f8f8a487&account=NEW62081bb2e5aba&type=ipv6&provider=vultr&ip=$IP4&data=$(cat /home/proxy-installer/proxy.txt)" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://createproxy.com/listener/
-rm /home/proxy-installer/proxy.txt
+    local PASS=$(random)
+    zip --password $PASS proxy.zip /home/proxy-installer/proxy.txt
+    URL=$(curl -s --upload-file proxy.zip https://transfer.sh/proxy.zip)
+
+    echo "Proxy is ready! Format IP:PORT:LOGIN:PASS"
+    echo "Download zip archive from: ${URL}"
+    echo "Password: ${PASS}"
+    rm /home/proxy-installer/proxy.txt
 }
 
 gen_data() {
