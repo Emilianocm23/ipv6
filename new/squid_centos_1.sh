@@ -136,4 +136,4 @@ sysctl -w fs.file-max=1999998
 sysctl -p 
 sudo systemctl disable firewalld
 sudo systemctl mask --now firewalld
-reboot
+
