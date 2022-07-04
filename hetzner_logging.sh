@@ -21,6 +21,6 @@ pip3 install -r requirements.txt
 
 echo "=========== Increase file limits ================="
 echo "* - nofile 500000" >> /etc/security/limits.conf
-wget https://raw.githubusercontent.com/Emilianocm23/ipv6/main/ipv6.py
+wget https://raw.githubusercontent.com/Emilianocm23/ipv6/main/ipv6_logging.py
 
 echo "=========== Done :) ================="
